@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Musicon</title>
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+    <script src="handlebars.min.js"></script>
+    <script id='template' type='text/x-handlebars-template'>
+      {{#each instruments}}
+      <article class="instrument">
+        <img class='image' src="{{this.image}}" alt="{{this.name}}">
+        <section class="details">
+          <h2 class="name">{{this.name}}</h2>
+          <p class="description">{{this.description}}</p>
+          {{#if sale}}
+          <p class="price"><del>Price: {{this.price}}</del></p>
+          <p class="deal">After Discount: {{this.deal}}</p>
+          {{/if}}
+        </section>
+      </article>
+      {{/each}}
+    </script>
   </head>
 
   <body>
