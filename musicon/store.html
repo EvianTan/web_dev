@@ -10,13 +10,15 @@
     <script id='templateHB' type='text/x-handlebars-template'>
       {{#each instruments}}
       <article class="instrument">
-        <img class='image' src="{{this.image}}" alt="{{this.name}}">
-        <section class="details">
+        <img class="image" src="{{image}}" alt="{{name}}">
+        <section class="details">  
           <h2 class="name">{{this.name}}</h2>
           <p class="description">{{this.description}}</p>
           {{#if sale}}
           <p class="price"><del>Price: {{this.price}}</del></p>
-          <p class="deal">After Discount: {{this.deal}}</p>
+          <p class="sale">On Sale! {{this.sale}}</p>
+          {{else}}
+          <p class="price">Price: {{this.price}}</p>
           {{/if}}
         </section>
       </article>
